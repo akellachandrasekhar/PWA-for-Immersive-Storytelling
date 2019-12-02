@@ -1,0 +1,18 @@
+{
+  "name": "pwa",
+  "version": "1.0.0",
+  "description": "PWA for Immersive Storytelling",
+  "main": "sw.js",
+  "scripts": {
+    "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
+    "start": "http-server -p 9000"
+  },
+  "author": "Chandra Akella",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "http-server": "^0.12.0"
+  }
+}
