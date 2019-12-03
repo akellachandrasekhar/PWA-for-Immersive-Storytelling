@@ -51,5 +51,5 @@ function displayNotification() {
 	  };
 	  alert('setting');
 	  reg.showNotification('Hello world!', options);
-	});
+	}).catch((err) => alert(err));
 }
