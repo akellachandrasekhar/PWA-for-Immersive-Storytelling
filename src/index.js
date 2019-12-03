@@ -22,12 +22,10 @@ function displayPopUpOnIos() {
 	}
 	// Detects if device is in standalone mode
 	const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-
+	displayNotification();
 	// Checks if should display install popup notification:
 	if (isIos() && !isInStandaloneMode()) {
 	  this.setState({ showInstallMessage: true });
-	  alert('displaying');
-	  displayNotification();
 	}	
 }
 
@@ -40,6 +38,7 @@ Notification.requestPermission(function(status) {
 });
 
 function displayNotification() {
+	alert('in displayNotification');
   	navigator.serviceWorker.getRegistration().then(function(reg) {
 	  var options = {
 	    body: 'Here is a notification body!',
@@ -50,6 +49,7 @@ function displayNotification() {
 	      primaryKey: 1
 	    }
 	  };
+	  alert('setting');
 	  reg.showNotification('Hello world!', options);
 	});
 }
