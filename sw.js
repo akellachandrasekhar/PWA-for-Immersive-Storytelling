@@ -66,3 +66,19 @@ self.addEventListener('notificationclick', function(e) {
     notification.close();
   }
 });
+
+
+self.addEventListener('push', function(e) {
+  var options = {
+    body: 'Here is a notification body!',
+    icon: 'img/icons/icon-96x96.png',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: 1
+    }
+  };
+  e.waitUntil(
+    self.registration.showNotification('Hello world!', options)
+  );
+});
