@@ -1,0 +1,1 @@
+"serviceWorker"in navigator?console.log(navigator):console.log("nope");
