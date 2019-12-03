@@ -67,7 +67,6 @@ self.addEventListener('notificationclick', function(e) {
   }
 });
 
-
 self.addEventListener('push', function(e) {
   var options = {
     body: 'Here is a notification body!',

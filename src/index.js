@@ -13,6 +13,14 @@ async function registerSW() {
   }
 }
 
+function showIosInstall() {
+    let iosPrompt = document.querySelector(".ios-prompt");
+    iosPrompt.style.display = "block";
+    iosPrompt.addEventListener("click", () => {
+		iosPrompt.style.display = "none";
+    });
+  }
+
 // Adds a custom popup which will indicate that our app can be added to home screen
 function displayPopUpOnIos() {
 	// Detects if device is on iOS 
@@ -22,23 +30,22 @@ function displayPopUpOnIos() {
 	}
 	// Detects if device is in standalone mode
 	const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-	displayNotification();
+
 	// Checks if should display install popup notification:
 	if (isIos() && !isInStandaloneMode()) {
-	  this.setState({ showInstallMessage: true });
+	  // this.setState({ showInstallMessage: true });
+	  showIosInstall();
 	}	
 }
 
 //code to prompt the user to allow notifications
 Notification.requestPermission(function(status) {
-    console.log('Notification permission status:', status);
     if (Notification.permission == 'granted') {
     	displayNotification();
     }
 });
 
 function displayNotification() {
-	alert('in displayNotification');
   	navigator.serviceWorker.getRegistration().then(function(reg) {
 	  var options = {
 	    body: 'Here is a notification body!',
@@ -49,7 +56,6 @@ function displayNotification() {
 	      primaryKey: 1
 	    }
 	  };
-	  alert('setting');
 	  reg.showNotification('Hello world!', options);
-	}).catch((err) => alert(err));
+	});
 }
