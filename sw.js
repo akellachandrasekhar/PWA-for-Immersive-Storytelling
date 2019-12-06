@@ -5,9 +5,7 @@ const staticAssets = [
   '/index.html',
   '/css/styles.css',
   '/dist/main.js',
-  '/manifest.json',
-  '/img/',
-  '/img/icons/'
+  '/manifest.json'
 ];
 
 self.addEventListener('install', async e => {
@@ -71,7 +69,7 @@ self.addEventListener('notificationclick', function(e) {
 
 self.addEventListener('push', function(e) {
   var options = {
-    body: 'Here is a notification body!',
+    body: 'Olivia tries to stay positive while going through treatment for Acute Lymphoblastic Leukemia.',
     icon: 'img/icons/icon-96x96.png',
     vibrate: [100, 50, 100],
     data: {
@@ -80,6 +78,6 @@ self.addEventListener('push', function(e) {
     }
   };
   e.waitUntil(
-    self.registration.showNotification('Hello world!', options)
+    self.registration.showNotification('A Long Road', options);
   );
 });

@@ -48,7 +48,7 @@ Notification.requestPermission(function(status) {
 function displayNotification() {
   	navigator.serviceWorker.getRegistration().then(function(reg) {
 	  var options = {
-	    body: 'Here is a notification body!',
+	    body: 'Olivia tries to stay positive while going through treatment for Acute Lymphoblastic Leukemia.',
 	    icon: 'img/icons/icon-96x96.png',
 	    vibrate: [100, 50, 100],
 	    data: {
@@ -56,6 +56,6 @@ function displayNotification() {
 	      primaryKey: 1
 	    }
 	  };
-	  reg.showNotification('Hello world!', options);
+	  reg.showNotification('A Long Road', options);
 	});
 }
