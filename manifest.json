@@ -1,7 +1,7 @@
 {
 	"name": "PWA for Immersive Storytelling", 
 	"short_name": "PWA St. Jude", 
-	"start_url": "/index.html", 
+	"start_url": "www.google.com", 
 	"display": "standalone", 
 	"background_color": "#f5f5f5", 
 	"theme_color": "#1874dc",
